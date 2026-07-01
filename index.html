@@ -4,48 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Help Desk - Panel de Control Principal</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    <header>
+    <header class="main-header">
         <h1>Sistema Web de Gestión de Tickets - Help Desk 2026</h1>
         <p>Plataforma de Soporte Técnico</p>
     </header>
 
-    <nav>
+    <nav class="main-nav">
         <ul>
-            <li><a href="index.html"><strong>Inicio (Panel de Control Principal)</strong></a></li>
+            <li><a href="index.html" class="active"><strong>Inicio (Panel de Control Principal)</strong></a></li>
             <li><a href="reportar.html">Reportar Ticket</a></li>
             <li><a href="tickets.html">Visualizar Tickets</a></li>
         </ul>
     </nav>
 
-    <main>
-        <section>
-            <h2>Bienvenido a la Plataforma de Soporte Técnico</h2>
-            <p>Desde aquí puedes gestionar y realizar el seguimiento a todos los tickets de requerimientos técnicos de las empresas.</p>
+    <main class="dashboard-layout">
+        <section class="dashboard-content">
+            <div class="welcome-card">
+                <h2>Bienvenido a la Plataforma de Soporte Técnico</h2>
+                <p>Desde aquí puedes gestionar y realizar el seguimiento a todos los tickets de requerimientos técnicos de las empresas.</p>
+            </div>
+
+            <h2 class="section-title">Reporte Simulado del Sistema</h2>
+            
+            <div class="cards-grid">
+                <article class="card card-warning">
+                    <div class="card-header">
+                        <h3>Tickets Abiertos</h3>
+                        <span class="badge badge-high">Alta</span>
+                    </div>
+                    <p class="card-value">285</p>
+                    <p class="card-desc">En espera de atención inmediata.</p>
+                </article>
+
+                <article class="card card-info">
+                    <div class="card-header">
+                        <h3>Tickets en Proceso</h3>
+                        <span class="badge badge-medium">Media</span>
+                    </div>
+                    <p class="card-value">53</p>
+                    <p class="card-desc">Siendo atendidos por el equipo de soporte.</p>
+                </article>
+
+                <article class="card card-success">
+                    <div class="card-header">
+                        <h3>Tickets Resueltos</h3>
+                        <span class="badge badge-low">Baja</span>
+                    </div>
+                    <p class="card-value">452</p>
+                    <p class="card-desc">Solucionados con éxito esta semana.</p>
+                </article>
+            </div>
         </section>
 
-        <section>
-            <h2>Reporte simulado del sistema</h2>
-            <article>
-                <h3>Tickets abiertos</h3>
-                <p>Actualmente hay <strong>285</strong> tickets en espera de atención.</p>
-            </article>
-            <article>
-                <h3>Tickets en proceso</h3>
-                <p>Existen <strong>53</strong> tickets siendo atendidos por soporte.</p>
-            </article>
-            <article>
-                <h3>Tickets resueltos</h3>
-                <p>Se han solucionado <strong>452</strong> tickets durante esta semana.</p>
-            </article>
-        </section>
+        <aside class="ui-kit-demo">
+            <h2>UI Kit Componentes</h2>
+            <p class="ui-kit-subtitle">Línea gráfica pura en CSS3</p>
+            <hr>
+
+            <div class="demo-section">
+                <h4>Botones</h4>
+                <div class="btn-group">
+                    <button class="btn btn-primary">Guardar</button>
+                    <button class="btn btn-secondary">Cancelar</button>
+                    <button class="btn btn-danger">Eliminar</button>
+                </div>
+            </div>
+
+            <div class="demo-section">
+                <h4>Formularios Rápidos</h4>
+                <div class="form-group">
+                    <label for="quick-search">Búsqueda rápida</label>
+                    <input type="text" id="quick-search" class="form-input" placeholder="Buscar ticket por ID...">
+                </div>
+                <div class="form-group">
+                    <label for="quick-filter">Filtrar por Área</label>
+                    <select id="quick-filter" class="form-select">
+                        <option value="all">Todas las áreas</option>
+                        <option value="redes">Redes y Telecomunicaciones</option>
+                        <option value="desarrollo">Sistemas y Desarrollo</option>
+                    </select>
+                </div>
+            </div>
+        </aside>
     </main>
 
-    <footer>
+    <footer class="main-footer">
         <p>&copy; Sistema Web de Gestión de Tickets - Help Desk 2026. Todos los derechos reservados.</p>
-        <p>Desarrollado por: laurokarlos</p>
-        <p>Contacto de soporte: llopez9047@utm.edu.ec</p>
+        <p>Desarrollado por: <strong>laurokarlos</strong></p>
+        <p>Contacto de soporte: <a href="mailto:llopez9047@utm.edu.ec">llopez9047@utm.edu.ec</a></p>
     </footer>
 </body>
 </html>
