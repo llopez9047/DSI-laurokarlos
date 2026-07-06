@@ -1,0 +1,483 @@
+:root {
+    /* Paleta de colores corporativa */
+    --color-primary: #1e3a8a;       /* Azul Institucional/Bancario */
+    --color-secondary: #4b5563;     /* Gris Neutral */
+    --color-background: #f3f4f6;    /* Fondo claro */
+    --color-surface: #ffffff;       /* Fondo de contenedores (Cards) */
+    --color-text: #1f2937;          /* Texto principal */
+    --color-text-muted: #6b7280;    /* Texto secundario */
+    
+    /* Colores de estado*/
+    --color-success: #10b981;       /* Éxito / Resuelto */
+    --color-warning: #f59e0b;       /* Advertencia / Pendiente */
+    --color-danger: #ef4444;        /* Peligro / Alerta Alta */
+    --color-info: #3b82f6;          /* Info / En proceso */
+
+    /* Tipos de fuentes y bordes */
+    --font-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --radius-md: 8px;
+    --radius-sm: 4px;
+    --transition-smooth: all 0.3s ease;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Regla para todos los Box-Sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-base);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.5;
+}
+
+.main-header {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 1.5rem 2rem;
+    text-align: center;
+}
+
+.main-header p {
+    color: #93c5fd;
+    font-size: 0.95rem;
+    margin-top: 0.25rem;
+}
+
+.main-nav {
+    background-color: #111827;
+    padding: 0.75rem 2rem;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.main-nav a {
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: var(--transition-smooth);
+}
+
+.main-nav a:hover, .main-nav a.active {
+    color: white;
+}
+
+/* Grid del Dashboard Principal */
+
+.dashboard-layout {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+@media (max-width: 960px) {
+    .dashboard-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.welcome-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 2rem;
+    border-left: 5px solid var(--color-primary);
+}
+
+.section-title {
+    font-size: 1.25rem;
+    color: var(--color-secondary);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Estilos para las tarjetas */
+.card {
+    background-color: var(--color-surface);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.card-header h3 {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+}
+
+.card-value {
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: var(--color-text);
+    margin-bottom: 0.25rem;
+}
+
+.card-desc {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+/* Estilos de bordes decorativos mediante selectores de clase */
+.card-warning { border-top: 4px solid var(--color-warning); }
+.card-info { border-top: 4px solid var(--color-info); }
+.card-success { border-top: 4px solid var(--color-success); }
+
+
+/* Estilos para las alertas */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 50px;
+    text-transform: uppercase;
+}
+
+/* Selectores de prioridad */
+.badge-high {
+    background-color: #fee2e2;
+    color: var(--color-danger);
+}
+
+.badge-medium {
+    background-color: #fef3c7;
+    color: var(--color-warning);
+}
+
+.badge-low {
+    background-color: #d1fae5;
+    color: var(--color-success);
+}
+
+
+/* Estilos para los botones */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    outline: none;
+}
+
+/* Estados para los botones usando pseudoclases */
+.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+}
+.btn-primary:hover { background-color: #1d4ed8; }
+.btn-primary:focus { box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.4); }
+
+.btn-secondary {
+    background-color: var(--color-secondary);
+    color: white;
+}
+.btn-secondary:hover { background-color: #374151; }
+.btn-secondary:focus { box-shadow: 0 0 0 3px rgba(75, 85, 99, 0.4); }
+
+.btn-danger {
+    background-color: var(--color-danger);
+    color: white;
+}
+.btn-danger:hover { background-color: #dc2626; }
+.btn-danger:focus { box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.4); }
+
+
+/* Estilos para los formularios */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+    color: var(--color-secondary);
+}
+
+/* Estilos para los inputs y selects */
+.form-input, .form-select {
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.9rem;
+    font-family: inherit;
+    border: 1px solid #d1d5db;
+    border-radius: var(--radius-sm);
+    background-color: #f9fafb;
+    outline: none;
+    transition: var(--transition-smooth);
+}
+
+/* Estilos para los estados de interacción */
+.form-input:focus, .form-select:focus {
+    border-color: var(--color-info);
+    background-color: var(--color-surface);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.ui-kit-demo {
+    background-color: var(--color-surface);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    height: fit-content;
+}
+
+.ui-kit-subtitle {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+}
+
+.ui-kit-demo hr {
+    border: 0;
+    height: 1px;
+    background: #e5e7eb;
+    margin: 1rem 0;
+}
+
+.demo-section {
+    margin-bottom: 1.5rem;
+}
+
+.demo-section h4 {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.75rem;
+}
+
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.main-footer {
+    background-color: #111827;
+    color: #9ca3af;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    font-size: 0.85rem;
+}
+
+.main-footer a {
+    color: #60a5fa;
+    text-decoration: none;
+}
+
+/* Layout simple de una columna */
+.single-layout {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+/* Contenedores tipo tarjetas */
+.form-container-card, .table-container-card {
+    background-color: var(--color-surface);
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+.section-subtitle {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+}
+
+.ui-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Formulario actualizado */
+.form-textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.9rem;
+    font-family: inherit;
+    border: 1px solid #d1d5db;
+    border-radius: var(--radius-sm);
+    background-color: #f9fafb;
+    outline: none;
+    resize: vertical;
+    transition: var(--transition-smooth);
+}
+.form-textarea:focus {
+    border-color: var(--color-info);
+    background-color: var(--color-surface);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Usamos un fieldset mejorado */
+.form-fieldset {
+    border: 1px solid #e5e7eb;
+    border-radius: var(--radius-sm);
+    padding: 1.25rem;
+}
+.form-fieldset legend {
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0 0.5rem;
+    color: var(--color-secondary);
+}
+
+/* Estilos para los radios flex */
+.radio-group {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+/* Botones para el formulario */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Tablas con diseños responsivos */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch;
+    border-radius: var(--radius-sm);
+    border: 1px solid #e5e7eb;
+}
+
+.ui-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.9rem;
+    background-color: var(--color-surface);
+}
+
+.ui-table caption {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    text-align: right;
+    background-color: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.ui-table th, .ui-table td {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.ui-table th {
+    background-color: #f9fafb;
+    color: var(--color-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+.ui-table tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+/* Botones para el panel lateral */
+.btn-group-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* Estilos para el media queries y puntos de ruptura*/ 
+@media (max-width: 768px) {
+    .main-nav padding {
+        padding: 0.5rem 1rem;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .main-nav a {
+        display: block;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #1f2937;
+    }
+    
+    .main-nav li:last-child a {
+        border-bottom: none;
+    }
+
+/* Estilo para que el formulario abarque el 100% del ancho del dispositivo */
+    .form-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .form-actions .btn {
+        width: 100%;
+    }
+    
+    .radio-group {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+/* Estilo de espaciados para las tarjetas */
+    
+    .form-container-card, .table-container-card {
+        padding: 1.25rem;
+    }
+    
+}
