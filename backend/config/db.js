@@ -1,17 +1,14 @@
 const { Pool } = require('pg');
-require('dotenv').config();
+
+const isProduction = process.env.NODE_ENV === 'production';
 
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
-    ssl: {
-        rejectUnauthorized: false
-    }
+    ssl: isProduction ? { rejectUnauthorized: false } : false
 });
 
 pool.on('connect', () => {
-    console.log('Conexión SSL segura establecida con PostgreSQL en la nube.');
+    console.log('🔌 Conexión a PostgreSQL establecida con éxito.');
 });
 
-module.exports = {
-    query: (text, params) => pool.query(text, params),
-};
+module.exports = pool;
