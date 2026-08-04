@@ -1,7 +1,7 @@
 {
   "name": "helpdesk-backend",
   "version": "1.0.0",
-  "description": "API REST para Help Desk UTM",
+  "description": "API REST para Help Desk",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
