@@ -4,37 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Help Desk - Reportar Ticket</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    <header>
+    <header class="main-header">
         <h1>Sistema Web de Gestión de Tickets - Help Desk 2026</h1>
         <p>Plataforma de Soporte Técnico</p>
     </header>
 
-    <nav>
+    <nav class="main-nav">
         <ul>
-            <li><a href="index.html">Inicio (Panel de Control Principal)</a></li>
-            <li><a href="reportar.html"><strong>Reportar Ticket</strong></a></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="reportar.html" class="active"><strong>Reportar Ticket</strong></a></li>
             <li><a href="tickets.html">Visualizar Tickets</a></li>
         </ul>
     </nav>
 
-    <main>
-        <section>
-            <h2>Nuevo ticket</h2>
-            <p>Completa el siguiente formulario para registrar el requerimiento técnico.</p>
+    <main class="single-layout">
+        <section class="form-container-card">
+            <h2 class="section-title">Nuevo Ticket de Soporte</h2>
+            <p class="section-subtitle">Completa el siguiente formulario para registrar el requerimiento técnico.</p>
 
-            <form action="#" method="POST">
-                <div>
+            <form action="#" method="POST" class="ui-form">
+                <div class="form-group">
                     <label id="lbl-titulo" for="titulo">Título del Ticket:</label>
-                    <input type="text" id="titulo" name="titulo" placeholder="Ej. Falla de conexión a internet" required aria-labelledby="lbl-titulo">
+                    <input type="text" id="titulo" name="titulo" class="form-input" placeholder="Ej. Falla de conexión a internet" required aria-labelledby="lbl-titulo">
                 </div>
 
-                <br>
-
-                <div>
+                <div class="form-group">
                     <label id="lbl-categoria" for="categoria">Categoría:</label>
-                    <select id="categoria" name="categoria" required aria-labelledby="lbl-categoria">
+                    <select id="categoria" name="categoria" class="form-select" required aria-labelledby="lbl-categoria">
                         <option value="">Selecciona una opción</option>
                         <option value="red">Red</option>
                         <option value="hardware">Hardware</option>
@@ -42,43 +41,41 @@
                     </select>
                 </div>
 
-                <br>
-
-                <fieldset>
-                    <legend>Prioridad</legend>
-                    
-                    <input type="radio" id="prioridad-alta" name="prioridad" value="alta" required>
-                    <label for="prioridad-alta">Alta</label>
-                    
-                    <input type="radio" id="prioridad-media" name="prioridad" value="media">
-                    <label for="prioridad-media">Media</label>
-                    
-                    <input type="radio" id="prioridad-baja" name="prioridad" value="baja">
-                    <label for="prioridad-baja">Baja</label>
+                <fieldset class="form-fieldset">
+                    <legend>Prioridad del Requerimiento</legend>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" id="prioridad-alta" name="prioridad" value="alta" required>
+                            <span>Alta</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" id="prioridad-media" name="prioridad" value="media">
+                            <span>Media</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" id="prioridad-baja" name="prioridad" value="baja">
+                            <span>Baja</span>
+                        </label>
+                    </div>
                 </fieldset>
 
-                <br>
-
-                <div>
+                <div class="form-group">
                     <label id="lbl-descripcion" for="descripcion">Descripción Detallada:</label>
-                    <br>
-                    <textarea id="descripcion" name="descripcion" rows="5" cols="40" placeholder="Describe detalladamente el problema para registrar el Ticket." required aria-labelledby="lbl-descripcion"></textarea>
+                    <textarea id="descripcion" name="descripcion" class="form-textarea" placeholder="Describe detalladamente el problema para registrar el Ticket." required aria-labelledby="lbl-descripcion"></textarea>
                 </div>
 
-                <br>
-
-                <div>
-                    <button type="submit">Enviar Reporte</button>
-                    <button type="reset">Limpiar Formulario</button>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Enviar Reporte</button>
+                    <button type="reset" class="btn btn-secondary">Limpiar Formulario</button>
                 </div>
             </form>
         </section>
     </main>
 
-    <footer>
+    <footer class="main-footer">
         <p>&copy; Sistema Web de Gestión de Tickets - Help Desk 2026. Todos los derechos reservados.</p>
-        <p>Desarrollado por: laurokarlos</p>
-        <p>Contacto de soporte: llopez9047@utm.edu.ec</p>
+        <p>Desarrollado por: <strong>laurokarlos</strong></p>
+        <p>Contacto de soporte: <a href="mailto:llopez9047@utm.edu.ec">llopez9047@utm.edu.ec</a></p>
     </footer>
 </body>
 </html>
