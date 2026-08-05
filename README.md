@@ -51,7 +51,7 @@ La base de datos está configurada para PostgreSQL, con cifrado tipo `bcrypt` pa
 
 - **Port:** 3000
 - **Node_Env:** production
-- **Database_URL:**
+- **Database_URL:** jdbc:postgresql://dpg-d9m1n2u7bikc739tl54g-a.virginia-postgres.render.com:5432/helpdesk_3ow
 
 ---
 
@@ -68,5 +68,9 @@ La base de datos está configurada para PostgreSQL, con cifrado tipo `bcrypt` pa
 
 ---
 
+## 👨‍💻 Autor
 
+Lauro K. López Macías
+Quinto Semestre de TICS
+Universidad Técnica de Manabí
 
