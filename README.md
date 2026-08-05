@@ -70,7 +70,5 @@ La base de datos está configurada para PostgreSQL, con cifrado tipo `bcrypt` pa
 
 ## 👨‍💻 Autor
 
-Lauro K. López Macías
-Quinto Semestre de TICS
-Universidad Técnica de Manabí
+Lauro K. López Macías - Quinto Semestre de TICS - Universidad Técnica de Manabí
 
