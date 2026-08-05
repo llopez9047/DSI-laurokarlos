@@ -49,8 +49,8 @@ La base de datos está configurada para PostgreSQL, con cifrado tipo `bcrypt` pa
 
 ## 🔐 Variables de Entorno y Configuración de Conexión
 
-- **Port:**
-- **Node_Env:**
+- **Port:** 3000
+- **Node_Env:** 
 - **Database_URL:**
 
 ---
