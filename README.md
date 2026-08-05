@@ -41,8 +41,8 @@ La base de datos está configurada para PostgreSQL, con cifrado tipo `bcrypt` pa
     │   └── ticketRoutes.js   # Rutas para /api/tickets
     ├── package.json          # Gestión de dependencias
     └── server.js             # Servidor principal y middlewares
-├── capturas/
-│   └── init.sql              # Script SQL de creación de tablas
+└── capturas/
+    └── *.png                 # Archivos *.png de las capturas de pantalla de la configuración y ejecución del Help Desk  
 ```
 
 ---
