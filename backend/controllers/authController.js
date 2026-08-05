@@ -46,3 +46,13 @@ exports.registrar = async (req, res) => {
         return res.status(500).json({ error: "Error al registrar el usuario." });
     }
 };
+
+exports.listarUsuarios = async (req, res) => {
+    try {
+        const result = await pool.query('SELECT id, nombre, email FROM usuarios ORDER BY id ASC');
+        return res.status(200).json(result.rows);
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: "Error al obtener la lista de usuarios." });
+    }
+};
