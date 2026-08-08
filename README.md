@@ -57,7 +57,7 @@ La base de datos está configurada para PostgreSQL, con cifrado tipo `bcrypt` pa
 
 ## 🌐 Endpoints de la API REST
 
-- **POST para registrar usuarios** /api/auth/registrar con body tipo JSON { "nombre": "...", "email": "...", "password": "..." }
+- **POST para registrar usuarios** /api/auth/registrar con body tipo JSON { "nombre": "...", "email": "...", "password": "...", "rol": "...." }
 - **POST para hacer login** /api/auth/login con body tipo JSON { "email": "...", "password": "..." }
 - **GET para consultar usuarios** /api/auth/usuarios sin body tipo JSON 
 - **POST para crear un incidente** /api/tickets con body tipo JSON { "titulo": "...", "descripcion": "...", "categoria": "...", "prioridad": "...", "usuario_id": 1 }
