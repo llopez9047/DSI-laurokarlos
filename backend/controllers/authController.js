@@ -33,7 +33,7 @@ exports.login = async (req, res) => {
 };
 
 exports.registrar = async (req, res) => {
-    const { nombre, email, password, rol = 'Cliente' } = req.body; 
+    const { nombre, email, password, rol } = req.body; 
     try {
         const hashedPassword = await bcrypt.hash(password, 10);
         const result = await pool.query(
