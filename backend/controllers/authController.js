@@ -49,7 +49,7 @@ exports.registrar = async (req, res) => {
 
 exports.listarUsuarios = async (req, res) => {
     try {
-        const result = await pool.query('SELECT id, nombre, email FROM usuarios ORDER BY id ASC');
+        const result = await pool.query('SELECT id, nombre, email, rol FROM usuarios ORDER BY id ASC');
         return res.status(200).json(result.rows);
     } catch (error) {
         console.error(error);
